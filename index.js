@@ -3,14 +3,14 @@ require('dotenv').config();
 const text = require('./const')
 const webAppUrl = 'https://rainbow-trifle-e6da20.netlify.app'
 
-const mysql = require("mysql2");
+/*const mysql = require("mysql2");
   
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "martlan30", 
   database: "mydb"
-});
+});*/
 
 /*connection.connect(function(err) {
     if (err) throw err;
@@ -20,7 +20,7 @@ const connection = mysql.createConnection({
       if (err) throw err;
       console.log("Table created");
     });
-  });*/
+  });
 
   connection.connect(function(err) {
     if (err) throw err;
@@ -28,7 +28,8 @@ const connection = mysql.createConnection({
       if (err) throw err;
       console.log(result);
     });
-  });
+  });*/
+
 const bot = new TelegramBot(process.env.BOT_TOKEN, {polling: true});
 
 
@@ -63,12 +64,12 @@ bot.on('message', async (msg) => {
               }
             if(data){
                 // отдельная переменная для читабельность
-                const sql = "INSERT INTO information (name, surname, tgId, knowledge_level) VALUES (?,?,?,?)"; 
-                const params = [data?.name, data?.surname, msg?.chat?.username, data?.knowledge_level];
-                connection.query(sql, params,
-                        function(err) {
-                            if (err) Promise.reject(new Error('fail')).then(resolved, rejected);
-                        });
+              //  const sql = "INSERT INTO information (name, surname, tgId, knowledge_level) VALUES (?,?,?,?)"; 
+              //  const params = [data?.name, data?.surname, msg?.chat?.username, data?.knowledge_level];
+              //  connection.query(sql, params,
+              //          function(err) {
+              //              if (err) Promise.reject(new Error('fail')).then(resolved, rejected);
+               //         });
                  //   connection.end();
                 }
                 
