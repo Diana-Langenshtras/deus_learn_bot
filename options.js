@@ -24,14 +24,7 @@ module.exports = {
         })
     },
 
-    startLearn : {
-        reply_markup: JSON.stringify({
-            inline_keyboard: [
-            [{text: 'Да, давай начнем!', callback_data: 'firstLearn'}],
-            [{text: 'Я уже знаю эту тему, давай перейдем к следующей.', callback_data: 'nextLearn'}]
-            ]
-        })
-    },
+    
 
    
 
