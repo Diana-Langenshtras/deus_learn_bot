@@ -9,67 +9,10 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "martlan30", 
+  password: "", 
   database: "mydb"
 });
 
-//const firstLesson = require('./firstLesson.js');
-//const secondLesson = require('./secondLesson.js');
-
-/*connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  var sql = "DROP TABLE users_info";
-  connection.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("Table deleted");
-  });
-});*/
-
-/*connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    var sql = "CREATE TABLE users_info (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), surname VARCHAR(255), tgId VARCHAR(255), knowledge_level TINYINT, lessons VARCHAR(255))";
-    connection.query(sql, function (err, result) {
-      if (err) throw err;
-      console.log("Table created");
-    });
-  });*/
- /* connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    var sql = "CREATE TABLE Lessons (id INT AUTO_INCREMENT PRIMARY KEY, lessons VARCHAR(255))";
-    connection.query(sql, function (err, result) {
-      if (err) throw err;
-      console.log("Table created");
-    });
-  });*/
-  /*connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    var sql = "INSERT INTO Lessons (lessons) VALUES ('Введение в DevOps: Что такое DevOps: https://youtu.be/OhF5rGsjC98')";
-    connection.query(sql, function (err, result) {
-      if (err) throw err;
-      console.log("Table created");
-    });
-  }); */
- /* connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    var sql = "TRUNCATE TABLE users_info";
-    connection.query(sql, function (err, result) {
-      if (err) throw err;
-      console.log("Table TRUNCATE");
-    });
-  });*/
-  
- /* connection.connect(function(err) {
-    if (err) throw err;
-    connection.query("DELETE FROM users_info WHERE id = 1", function (err, result, fields) {
-     // if (err) throw err;
-      console.log(result);
-    });
-  });*/
   connection.connect(function(err) {
     if (err) throw err;
     connection.query("SELECT * FROM users_info", function (err, result, fields) {
